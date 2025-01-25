@@ -46,8 +46,10 @@ const Header = () => {
     >
       <nav className="container mx-auto px-4 py-3">
         <div className="flex-1 flex items-center justify-between">
-          <div className="text-2xl font-bold text-base-content">
-            Developer<span className="text-primary">.</span>
+          <div className="text-2xl font-bold">
+            <span className="text-primary">MERN </span>
+            <span className="text-secondary">Developer </span> 
+            <span className="text-primary">.</span>
           </div>
 
           <div className="flex items-center gap-4">

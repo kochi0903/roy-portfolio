@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
 const Overview = () => {
   const skills = [
     "Full Stack Development",
     "Cloud Architecture",
-    "API Development"
+    "API Development",
   ];
 
   const stats = [
-    { value: "5+", label: "Years Experience" },
-    { value: "50+", label: "Projects Completed" },
-    { value: "30+", label: "Happy Clients" },
+    { value: "2+", label: "Years Experience" },
+    { value: "10+", label: "Projects Completed" },
+    { value: "3+", label: "Happy Clients" },
     { value: "99%", label: "Success Rate" },
   ];
 
@@ -31,10 +31,12 @@ const Overview = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-primary">Who I Am</h3>
             <p className="text-base-content/70 leading-relaxed">
-              A passionate Software Developer with 5+ years of experience in
-              building web applications. I specialize in both frontend and
-              backend development, creating seamless user experiences and
-              robust server-side solutions.
+              A passionate Frontend Developer with 2+ years of experience in an
+              MNC, specializing in ReactJS, NodeJS, and SQL. Skilled in building
+              dynamic, responsive web applications and managing backend
+              integrations and also deployment in Cloud sever. Seeking
+              opportunities to contribute technical expertise to innovative
+              projects and drive impactful results
             </p>
 
             <div className="space-y-4">

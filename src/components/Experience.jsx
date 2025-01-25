@@ -2,31 +2,31 @@ import React, { useEffect } from "react";
 
 const experienceData = [
   {
-    role: "Senior Software Engineer",
-    company: "Tech Corp International",
-    period: "2021 - Present",
+    role: "Software Engineer",
+    company: "Capital Numbers Pvt Ltd",
+    period: "2022 - 2023",
     details: [
-      "Led development of enterprise-scale applications",
-      "Managed team of 5 developers",
-      "Implemented microservices architecture",
+      "Worked team of 10 developers",
+      "Implemented complex redux architecture",
+      "Optimized application performance",
     ],
     animation: "animate__fadeInLeft",
   },
   {
-    role: "Full Stack Developer",
-    company: "Digital Solutions Co.",
-    period: "2019 - 2021",
+    role: "Jr. Full Stack Developer",
+    company: "Yeasitech",
+    period: "2021 - 2022",
     details: [
-      "Developed responsive web applications",
-      "Optimized application performance",
+      "Developed full-stack applications",
+      "Utilized AWS EC2 and AWS S3 services",
       "Implemented CI/CD pipelines",
     ],
     animation: "animate__fadeInRight",
   },
   {
-    role: "Frontend Developer",
+    role: "Trainee Developer",
     company: "WebTech Startups",
-    period: "2018 - 2019",
+    period: "2020 - 2021",
     details: [
       "Built interactive user interfaces",
       "Collaborated with UI/UX designers",
@@ -42,7 +42,10 @@ const Experience = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("animate__animated", entry.target.dataset.animation);
+            entry.target.classList.add(
+              "animate__animated",
+              entry.target.dataset.animation
+            );
             entry.target.style.opacity = 1;
           }
         });
@@ -80,11 +83,7 @@ const Experience = () => {
                 className={`relative flex md:justify-between items-center flex-col md:flex-row`}
                 data-animation={exp.animation}
               >
-                <div
-                  className={`md:w-5/12 mb-8 md:mb-0 ${
-                    index % 2 === 0 ? "md:text-right" : "md:order-2"
-                  }`}
-                >
+                <div className="md:w-5/12 mb-8 md:mb-0 md:text-right">
                   <div className="card bg-base-200 shadow-xl p-6">
                     <h3 className="card-title text-base-content">{exp.role}</h3>
                     <p className="text-base-content/80">{exp.company}</p>

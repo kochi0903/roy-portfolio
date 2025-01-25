@@ -9,7 +9,7 @@ const Hero = () => {
           <div className="space-y-6">
             <p className="text-base-content/80 font-semibold">Hello, I'm</p>
             <h1 className="text-4xl md:text-6xl font-bold text-base-content">
-              John Developer
+              Kisholoy Roy
             </h1>
             <h2 className="text-2xl md:text-3xl text-primary">
               Full Stack Developer
@@ -39,7 +39,7 @@ const Hero = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="bg-base-100 rounded-full shadow-lg w-full h-full flex items-center justify-center">
                   <div className="text-6xl md:text-9xl font-bold text-primary">
-                    JD
+                    KR
                   </div>
                 </div>
               </div>

@@ -6,17 +6,15 @@ const skills = [
     delay: "0s",
     skills: [
       { name: "React.js", level: "90%" },
-      { name: "Vue.js", level: "85%" },
-      { name: "TypeScript", level: "88%" },
+      { name: "TypeScript", level: "50%" },
     ],
   },
   {
     category: "Backend",
     delay: "0.2s",
     skills: [
-      { name: "Node.js", level: "92%" },
-      { name: "Python", level: "85%" },
-      { name: "Java", level: "80%" },
+      { name: "Node.js", level: "90%" },
+      { name: "Python", level: "50%" },
     ],
   },
   {
@@ -25,16 +23,14 @@ const skills = [
     skills: [
       { name: "MongoDB", level: "90%" },
       { name: "PostgreSQL", level: "85%" },
-      { name: "Redis", level: "82%" },
     ],
   },
   {
     category: "DevOps",
     delay: "0.6s",
     skills: [
-      { name: "Docker", level: "88%" },
-      { name: "AWS", level: "85%" },
-      { name: "CI/CD", level: "86%" },
+      { name: "Cloud Hosting", level: "85%" },
+      { name: "CI/CD", level: "50%" },
     ],
   },
 ];
