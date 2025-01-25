@@ -4,6 +4,7 @@ import { ThemeContext } from "../main.jsx";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hasShadow, setHasShadow] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -13,6 +14,14 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
   const menuItems = [
     { href: "#overview", label: "Overview" },
     { href: "#skills", label: "Technology" },
@@ -20,7 +29,12 @@ const Header = () => {
     { href: "#projects", label: "Projects" },
     { href: "#contact", label: "Contact" },
   ];
-  const { toggleTheme, currentTheme } = useContext(ThemeContext);
+  const { toggleTheme, currentTheme, themes } = useContext(ThemeContext);
+
+  const handleThemeChange = (theme) => {
+    toggleTheme(theme);
+    closeDropdown();
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,9 +67,23 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="btn btn-ghost btn-circle" onClick={toggleTheme}>
-              {currentTheme}
-            </button>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 rounded-full bg-primary"></div>
+              <div className="dropdown">
+                <button className="btn btn-ghost btn-circle uppercase min-w-[7rem]" onClick={toggleDropdown}>
+                  THEME - {currentTheme}
+                </button>
+                {isDropdownOpen && (
+                  <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                    {themes.map((theme) => (
+                      <li key={theme}>
+                        <button onClick={() => handleThemeChange(theme)}>{theme}</button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-2">
