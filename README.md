@@ -51,6 +51,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Kisholoy Roy - [your-email@example.com](mailto:your-email@example.com)
-
-Project Link: [https://github.com/your-username/roy-portfolio](https://github.com/your-username/roy-portfolio)
+Kisholoy Roy - [kroy8900391997@gmail.com](mailto:kroy8900391997@gmail.com)
