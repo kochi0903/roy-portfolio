@@ -3,9 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   daisyui: {
     themes: [
+      "forest",
       "cupcake",
       "lemonade",
-      "forest",
       "aqua",
       "pastel",
       "luxury",

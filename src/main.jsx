@@ -7,9 +7,9 @@ export const ThemeContext = React.createContext();
 
 const Main = () => {
   const themes = [
+    "forest",
     "cupcake",
     "lemonade",
-    "forest",
     "aqua",
     "pastel",
     "luxury",
