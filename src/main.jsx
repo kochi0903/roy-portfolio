@@ -12,6 +12,7 @@ const Main = () => {
     "forest",
     "aqua",
     "pastel",
+    "luxury",
     "dark",
   ];
   const [currentTheme, setCurrentTheme] = useState(themes[0]);

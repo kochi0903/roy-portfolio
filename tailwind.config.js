@@ -3,13 +3,13 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   daisyui: {
     themes: [
-      "light",
-      "dark",
       "cupcake",
-      "luxury",
+      "lemonade",
+      "forest",
       "aqua",
       "pastel",
-      "lemonade",
+      "luxury",
+      "dark",
     ],
   },
   plugins: [require("daisyui")],

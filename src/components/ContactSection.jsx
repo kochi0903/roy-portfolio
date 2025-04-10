@@ -6,7 +6,7 @@ import {
   FaLinkedin,
   FaGithub,
 } from "react-icons/fa";
-import "animate.css"; // Ensure you have this installed: npm install animate.css
+import "animate.css";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -85,26 +85,26 @@ const ContactSection = () => {
 
           {/* Static Contact Message */}
           <div className="animate__animated animate__fadeInRight">
-            <div className="card bg-base-200 shadow-lg">
-              <div className="card-body">
-                <h2 className="card-title text-xl text-primary">
+            <div className="rounded-lg bg-base-200 shadow-lg">
+              <div className="p-6">
+                <h2 className="text-xl font-bold text-primary-600 mb-4">
                   Send Us a Message
                 </h2>
-                <p className="text-base-content/80 mb-4">
+                <p className="text-gray-700 mb-4">
                   Thank you for your interest! While the contact form is
                   currently unavailable, you can reach out to us directly using
                   the contact information provided on the left. We will get back
                   to you as soon as possible.
                 </p>
-                <p className="text-sm text-base-content/60">
+                <p className="text-sm text-gray-500">
                   We appreciate your understanding.
                 </p>
-                <div className="flex justify-start space-x-4">
+                <div className="flex justify-start space-x-4 mt-4">
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
                       href={social.href}
-                      className="btn btn-primary btn-square"
+                      className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary text-white hover:bg-blue-700 transition-colors duration-200"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
