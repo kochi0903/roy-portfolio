@@ -7,12 +7,12 @@ export const ThemeContext = React.createContext();
 
 const Main = () => {
   const themes = [
-    "dark",
     "cupcake",
+    "lemonade",
     "forest",
     "aqua",
     "pastel",
-    "lemonade",
+    "dark",
   ];
   const [currentTheme, setCurrentTheme] = useState(themes[0]);
 
