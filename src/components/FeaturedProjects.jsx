@@ -1,27 +1,22 @@
 import React from "react";
+import StudentJobTrackerIcon from "../assets/JobTracker.png";
+import Expenseracker from "../assets/ExpenseTracker.png";
+import InventoryIcon from "../assets/InventoryForecast.png";
 
 const ProjectsSection = () => {
   const projects = [
     {
-      icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 3.137 1.344a1 1 0 00.788 0l7-3a1 1 0 000-1.838l-7-3z" />
-        </svg>
-      ),
-      title: "Email Template Builder",
-      description: "Baby App of Template Builder",
+      icon: <img src={StudentJobTrackerIcon} alt="Job Tracker" />,
+      title: "Student Job Tracker",
+      description: "Full Stack Project",
       technologies: ["React", "Tailwind"],
       links: {
-        demo: "https://email-template-builder-seven.vercel.app/",
-        code: "https://github.com/kochi0903/email-template-builder",
+        demo: "https://roy-job-tracker.vercel.app/",
+        code: "https://github.com/kochi0903/student-job-tracker",
       },
     },
     {
-      icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 3.137 1.344a1 1 0 00.788 0l7-3a1 1 0 000-1.838l-7-3z" />
-        </svg>
-      ),
+      icon: <img src={Expenseracker} alt="Expense Tracker" />,
       title: "Tracker Expense",
       description: "User can Track their Day to Day Expenses.",
       technologies: ["React.js", "Redux"],
@@ -31,18 +26,13 @@ const ProjectsSection = () => {
       },
     },
     {
-      icon: (
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838l-2.727 1.17 3.137 1.344a1 1 0 00.788 0l7-3a1 1 0 000-1.838l-7-3z" />
-        </svg>
-      ),
-      title: "IP Tracker System",
-      description:
-        "Giving any IP on the search bar will provide the location details of the address",
-      technologies: ["ReactJS"],
+      icon: <img src={InventoryIcon} alt="Inventory Forecasting" />,
+      title: "Shop Inventory Forecasting",
+      description: "Forecasting the Inventory Amount on Basis of Previous Sale",
+      technologies: ["ReactJS", "AI/ML", "Django", "Python"],
       links: {
-        demo: "https://ip-tracker-two-bice.vercel.app/",
-        code: "https://github.com/kochi0903/ipTracker",
+        demo: "https://github.com/kochi0903/InventoryForecastReact",
+        code: "https://github.com/kochi0903/InventoryForecastReact",
       },
     },
   ];
