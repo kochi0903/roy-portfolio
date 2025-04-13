@@ -102,11 +102,8 @@ const ContactSection = () => {
                 <div className="flex justify-start space-x-4 mt-4">
                   {socialLinks.map((social, index) => (
                     <a
-                      key={index}
                       href={social.href}
-                      className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary text-white hover:bg-blue-700 transition-colors duration-200"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:underline"
                     >
                       {social.icon}
                     </a>

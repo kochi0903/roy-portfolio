@@ -4,7 +4,7 @@ import { ThemeContext } from "../main.jsx";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hasShadow, setHasShadow] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false); // Updated state for modal
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -14,12 +14,12 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const openModal = () => {
+    setIsModalOpen(true);
   };
 
-  const closeDropdown = () => {
-    setIsDropdownOpen(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
 
   const menuItems = [
@@ -33,7 +33,7 @@ const Header = () => {
 
   const handleThemeChange = (theme) => {
     toggleTheme(theme);
-    closeDropdown();
+    closeModal();
   };
 
   useEffect(() => {
@@ -62,27 +62,18 @@ const Header = () => {
         <div className="flex-1 flex items-center justify-between">
           <div className="text-2xl font-bold">
             <span className="text-primary">MERN </span>
-            <span className="text-secondary">Developer </span> 
+            <span className="text-secondary">Developer </span>
             {/* <span className="text-primary">.</span> */}
           </div>
 
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-4 h-4 rounded-full bg-primary"></div>
-              <div className="dropdown">
-                <button className="btn btn-ghost btn-circle uppercase min-w-[7rem]" onClick={toggleDropdown}>
-                  THEME - {currentTheme}
-                </button>
-                {isDropdownOpen && (
-                  <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                    {themes.map((theme) => (
-                      <li key={theme}>
-                        <button onClick={() => handleThemeChange(theme)}>{theme}</button>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              <button
+                className="btn btn-ghost btn-circle p-1"
+                onClick={openModal}
+              >
+                 <div className="w-4 h-4 rounded-full bg-primary"></div>
+              </button>
             </div>
 
             {/* Desktop Menu */}
@@ -124,12 +115,40 @@ const Header = () => {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="btn btn-ghost justify-start"
+                  className="btn btn-ghost justify-start text-sm md:text-base"
                   onClick={closeMobileMenu}
                 >
                   {item.label}
                 </a>
               ))}
+            </div>
+          </div>
+        )}
+
+        {/* Theme Modal */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-base-100 p-4 rounded-lg shadow-lg relative w-11/12 max-w-sm md:max-w-md">
+              <button
+                className="absolute top-2 right-2 btn btn-ghost btn-circle text-xs md:text-sm"
+                onClick={closeModal}
+              >
+                ✕
+              </button>
+              <h2 className="text-sm md:text-base font-semibold mb-2">
+                Select Theme
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {themes.map((theme) => (
+                  <button
+                    key={theme}
+                    className="btn btn-ghost text-xs md:text-sm"
+                    onClick={() => handleThemeChange(theme)}
+                  >
+                    {theme}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         )}
