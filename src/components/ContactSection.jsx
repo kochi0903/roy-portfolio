@@ -13,8 +13,8 @@ const ContactSection = () => {
     {
       icon: <FaEnvelope className="w-6 h-6 text-primary-content" />,
       title: "Email",
-      value: "kroy8900391997@gmail.com",
-      link: "mailto:kroy8900391997@gmail.com",
+      value: "roykisholoy.edu@gmail.com",
+      link: "mailto:roykisholoy.edu@gmail.com",
       linkLabel: "Send Email",
     },
     {

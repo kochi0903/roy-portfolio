@@ -1,12 +1,21 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 
 const experienceData = [
+   {
+    role: "Associate Trainer",
+    company: "IamNeo.ai",
+    period: "2025 - Present",
+    details: [
+      "Corportae trainer for MERN Stack",
+    ],
+    animation: "animate__fadeInLeft",
+  },
   {
     role: "Software Engineer",
     company: "Capital Numbers Pvt Ltd",
     period: "2022 - 2023",
     details: [
-      "Worked team of 10 developers",
+      "Worked team of 10+ developers",
       "Implemented complex redux architecture",
       "Optimized application performance",
     ],

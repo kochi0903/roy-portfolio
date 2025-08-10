@@ -8,9 +8,9 @@ const Overview = () => {
   ];
 
   const stats = [
-    { value: "2+", label: "Years Experience" },
+    { value: "5+", label: "Years Experience" },
     { value: "10+", label: "Projects Completed" },
-    { value: "3+", label: "Happy Clients" },
+    { value: "10+", label: "Happy Clients" },
     { value: "99%", label: "Success Rate" },
   ];
 

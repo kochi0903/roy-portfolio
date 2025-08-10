@@ -51,4 +51,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Kisholoy Roy - [kroy8900391997@gmail.com](mailto:kroy8900391997@gmail.com)
+Kisholoy Roy - [roykisholoy.edu@gmail.com](mailto:roykisholoy.edu@gmail.com)
