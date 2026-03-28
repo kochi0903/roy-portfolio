@@ -1,77 +1,58 @@
 import React from "react";
 
 const Overview = () => {
-  const skills = [
-    "Full Stack Development",
-    "Cloud Architecture",
-    "API Development",
-  ];
-
-  const stats = [
-    { value: "5+", label: "Years Experience" },
-    { value: "10+", label: "Projects Completed" },
-    { value: "10+", label: "Happy Clients" },
-    { value: "99%", label: "Success Rate" },
+  const metrics = [
+    { label: "Years Experience", value: "4.5+", suffix: "Industry" },
+    { label: "Freelancing", value: "1.5", suffix: "Years" },
+    { label: "Projects Completed", value: "10+", suffix: "Production" },
+    { label: "Client Satisfaction", value: "100%", suffix: "Score" },
   ];
 
   return (
-    <section id="overview" className="bg-base-100 py-20">
+    <section id="overview" className="bg-base-100 py-24 border-t border-base-300">
       <div className="container mx-auto px-4">
-        {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Overview
-          </h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
+        {/* Meaningful Metrics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-32">
+          {metrics.map((metric, index) => (
+            <div key={index} className="text-center group">
+              <div className="text-5xl md:text-7xl font-black text-primary mb-2 group-hover:scale-110 transition-transform block">
+                {metric.value}
+              </div>
+              <div className="text-base-content font-bold text-sm tracking-widest uppercase mb-1">
+                {metric.label}
+              </div>
+              <div className="text-base-content/40 text-xs font-medium uppercase tracking-[0.2em]">
+                {metric.suffix}
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-primary">Who I Am</h3>
-            <p className="text-base-content/70 leading-relaxed">
-              A passionate Frontend Developer with 2+ years of experience in an
-              MNC, specializing in ReactJS, NodeJS, and SQL. Skilled in building
-              dynamic, responsive web applications and managing backend
-              integrations and also deployment in Cloud sever. Seeking
-              opportunities to contribute technical expertise to innovative
-              projects and drive impactful results
-            </p>
-
-            <div className="space-y-4">
-              {skills.map((skill) => (
-                <div key={skill} className="flex items-center space-x-3">
-                  <svg
-                    className="w-5 h-5 text-primary"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="text-base-content/80">{skill}</span>
-                </div>
-              ))}
-            </div>
+        {/* Bio Section */}
+        <div className="flex flex-col md:flex-row gap-20 items-center">
+          <div className="md:w-1/2">
+            <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-6">
+              Who I Am
+            </h2>
+            <h3 className="text-4xl md:text-6xl font-black text-base-content leading-tight mb-8">
+              Bridging the gap between <br />
+              <span className="text-base-content/40">code and commerce.</span>
+            </h3>
           </div>
-
-          {/* Right Content */}
-          <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="card bg-base-200 shadow-xl p-6 text-center hover:scale-105 transition-transform duration-300"
-              >
-                <div className="text-3xl font-bold text-primary mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-base-content/70">{stat.label}</div>
-              </div>
-            ))}
+          <div className="md:w-1/2 space-y-6">
+            <p className="text-xl text-base-content/70 leading-relaxed">
+              I am a results-driven MERN Stack Developer with a passion for
+              building robust, scalable, and user-centric applications. With 4.5
+              years of industry experience and 1.5 years of independent
+              freelancing, I have honed my skills in architecting
+              production-grade systems.
+            </p>
+            <p className="text-lg text-base-content/50 leading-relaxed">
+              My expertise lies in full-stack development, with a deep focus on
+              performance optimization, secure API design, and intuitive user
+              experiences. I thrive on solving complex technical challenges that
+              drive real business value.
+            </p>
           </div>
         </div>
       </div>

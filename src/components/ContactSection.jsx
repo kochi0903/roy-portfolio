@@ -1,119 +1,83 @@
 import React from "react";
-import {
-  FaEnvelope,
-  FaPhone,
-  FaMapMarkerAlt,
-  FaLinkedin,
-  FaGithub,
-} from "react-icons/fa";
-import "animate.css";
 
 const ContactSection = () => {
-  const contactInfo = [
-    {
-      icon: <FaEnvelope className="w-6 h-6 text-primary-content" />,
-      title: "Email",
-      value: "roykisholoy.edu@gmail.com",
-      link: "mailto:roykisholoy.edu@gmail.com",
-      linkLabel: "Send Email",
-    },
-    {
-      icon: <FaPhone className="w-6 h-6 text-primary-content" />,
-      title: "Phone",
-      value: "+91 9474113837",
-      link: "tel:+919474113837",
-      linkLabel: "Call Now",
-    },
-    {
-      icon: <FaMapMarkerAlt className="w-6 h-6 text-primary-content" />,
-      title: "Location",
-      value: "West Bengal, India",
-    },
-  ];
-
-  const socialLinks = [
-    {
-      icon: <FaLinkedin className="w-6 h-6" />,
-      href: "https://www.linkedin.com/in/kisholoy-roy-4a0b30b2/",
-    },
-    {
-      icon: <FaGithub className="w-6 h-6" />,
-      href: "https://github.com/kochi0903/",
-    },
-  ];
-
   return (
-    <section id="contact" className="bg-base-100 py-20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate__animated animate__fadeIn">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Contact Information
-          </h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
-          <p className="mt-4 text-base-content/80">
-            Here are the best ways to get in touch.
+    <section
+      id="contact"
+      className="bg-base-100 py-40 relative overflow-hidden"
+    >
+      <div className="container mx-auto px-4 relative z-10 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h3 className="text-5xl md:text-7xl font-black text-base-content mb-8 leading-tight">
+            Let's build something{" "}
+            <span className="text-primary italic">impactful</span>
+            <br />
+            together.
+          </h3>
+
+          <p className="text-lg text-base-content/50 mb-16 max-w-xl mx-auto">
+            Available for full-time roles, architectural consulting, or complex
+            full-stack builds.
           </p>
-        </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Contact Info */}
-          <div className="space-y-8 animate__animated animate__fadeInLeft">
-            {contactInfo.map((item, index) => (
-              <div className="card bg-base-200 shadow-lg" key={index}>
-                <div className="card-body">
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-primary p-3 rounded-lg">{item.icon}</div>
-                    <div>
-                      <h3 className="text-base-content font-semibold">
-                        {item.title}
-                      </h3>
-                      <p className="text-base-content/70">{item.value}</p>
-                      {item.link && (
-                        <a
-                          href={item.link}
-                          className="text-sm text-primary hover:underline"
-                        >
-                          {item.linkLabel}
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                </div>
+          {/* Contact Links */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-16">
+            <a
+              href="mailto:roykisholoy.edu@gmail.com"
+              className="flex items-center gap-4 group"
+            >
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <svg
+                  className="w-5 h-5 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
               </div>
-            ))}
-          </div>
+              <span className="text-base-content font-bold text-lg group-hover:text-primary transition-colors">
+                roykisholoy.edu@gmail.com
+              </span>
+            </a>
 
-          {/* Static Contact Message */}
-          <div className="animate__animated animate__fadeInRight">
-            <div className="rounded-lg bg-base-200 shadow-lg">
-              <div className="p-6">
-                <h2 className="text-xl font-bold text-primary-600 mb-4">
-                  Send Us a Message
-                </h2>
-                <p className="text-gray-700 mb-4">
-                  Thank you for your interest! While the contact form is
-                  currently unavailable, you can reach out to us directly using
-                  the contact information provided on the left. We will get back
-                  to you as soon as possible.
-                </p>
-                <p className="text-sm text-gray-500">
-                  We appreciate your understanding.
-                </p>
-                <div className="flex justify-start space-x-4 mt-4">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      href={social.href}
-                      className="text-sm text-primary hover:underline"
-                    >
-                      {social.icon}
-                    </a>
-                  ))}
-                </div>
+            <a
+              href="https://www.linkedin.com/in/kisholoy-roy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 group"
+            >
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <svg
+                  className="w-5 h-5 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
+                  />
+                </svg>
               </div>
-            </div>
+              <span className="text-base-content font-bold text-lg group-hover:text-primary transition-colors">
+                LinkedIn Profile
+              </span>
+            </a>
           </div>
         </div>
       </div>
+
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
     </section>
   );
 };

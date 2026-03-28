@@ -1,73 +1,57 @@
 import React from "react";
 
-const skills = [
-  {
-    category: "Frontend",
-    delay: "0s",
-    skills: [
-      { name: "React.js", level: "90%" },
-      { name: "TypeScript", level: "50%" },
-    ],
-  },
-  {
-    category: "Backend",
-    delay: "0.2s",
-    skills: [
-      { name: "Node.js", level: "90%" },
-      { name: "Python", level: "50%" },
-    ],
-  },
-  {
-    category: "Database",
-    delay: "0.4s",
-    skills: [
-      { name: "MongoDB", level: "90%" },
-      { name: "PostgreSQL", level: "85%" },
-    ],
-  },
-  {
-    category: "DevOps",
-    delay: "0.6s",
-    skills: [
-      { name: "Cloud Hosting", level: "85%" },
-      { name: "CI/CD", level: "50%" },
-    ],
-  },
-];
-
 const Skills = () => {
+  const categories = [
+    {
+      title: "Frontend",
+      skills: ["React.js", "Next.js", "Tailwind CSS", "JavaScript (ES6+)"],
+    },
+    {
+      title: "Backend",
+      skills: ["Node.js", "Express.js", "Java", "Python"],
+    },
+    {
+      title: "Databases",
+      skills: ["MongoDB", "PostgreSQL", "MySQL", "Oracle SQL"],
+    },
+    {
+      title: "Infrastructure",
+      skills: ["AWS", "GitHub Actions", "CI/CD Pipelines", "Nginx"],
+    },
+  ];
+
   return (
-    <section id="skills" className="bg-base-100 py-20">
+    <section id="skills" className="bg-base-100 py-24 border-t border-base-300">
       <div className="container mx-auto px-4">
-        {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Technology Stack
+        <div className="mb-16">
+          <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">
+            Technical Stack
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
+          <h3 className="text-4xl md:text-5xl font-black text-base-content">
+            Engineered for Performance
+          </h3>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {skills.map(({ category, delay, skills }) => (
-            <div key={category} className="card bg-base-200 shadow-xl p-6">
-              <h3 className="card-title text-base-content mb-4">{category}</h3>
-              <div className="space-y-4">
-                {skills.map(({ name, level }) => (
-                  <div key={name} className="skill-bar">
-                    <div className="flex justify-between mb-1">
-                      <span className="text-base-content/80">{name}</span>
-                      <span className="text-base-content/70">{level}</span>
-                    </div>
-                    <div className="w-full bg-base-300 rounded-full h-2">
-                      <div
-                        className="bg-primary h-2 rounded-full"
-                        style={{ width: level }}
-                      ></div>
-                    </div>
-                  </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {categories.map((category, index) => (
+            <div
+              key={index}
+              className="p-8 bg-base-200 rounded-2xl border border-primary/5 hover:border-primary/20 transition-all group"
+            >
+              <h4 className="text-primary font-bold text-lg mb-6 tracking-wide group-hover:translate-x-2 transition-transform block">
+                {category.title}
+              </h4>
+              <ul className="space-y-4">
+                {category.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="flex items-center space-x-3 text-base-content/70"
+                  >
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                    <span className="font-medium">{skill}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>

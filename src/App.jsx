@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Overview from "./components/Overview";
@@ -7,17 +7,10 @@ import Experience from "./components/Experience";
 import FeaturedProjects from "./components/FeaturedProjects";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-import { ThemeContext } from "./main.jsx";
 
 const App = () => {
-  const { currentTheme } = useContext(ThemeContext);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", currentTheme);
-  }, [currentTheme]);
-
   return (
-    <>
+    <div className="min-h-screen">
       <Header />
       <Hero />
       <Overview />
@@ -26,7 +19,7 @@ const App = () => {
       <FeaturedProjects />
       <ContactSection />
       <Footer />
-    </>
+    </div>
   );
 };
 

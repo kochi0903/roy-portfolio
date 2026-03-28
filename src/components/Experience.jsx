@@ -1,110 +1,87 @@
-import  { useEffect } from "react";
+import React from "react";
 
-const experienceData = [
-   {
+const experiences = [
+  {
     role: "Associate Trainer",
     company: "IamNeo.ai",
     period: "2025 - Present",
-    details: [
-      "Corportae trainer for MERN Stack",
-    ],
-    animation: "animate__fadeInLeft",
+    details: ["Corporate trainer for MERN Stack"],
   },
   {
     role: "Software Engineer",
-    company: "Capital Numbers Pvt Ltd",
-    period: "2022 - 2023",
+    company: "Capital Numbers",
+    period: "2022 - 2025",
     details: [
-      "Worked team of 10+ developers",
-      "Implemented complex redux architecture",
-      "Optimized application performance",
+      "Full Stack Development with MERN ecosystem",
+      "API optimization and system architecture",
     ],
-    animation: "animate__fadeInLeft",
   },
   {
     role: "Jr. Full Stack Developer",
     company: "Yeasitech",
     period: "2021 - 2022",
     details: [
-      "Developed full-stack applications",
-      "Utilized AWS EC2 and AWS S3 services",
-      "Implemented CI/CD pipelines",
+      "Frontend focused React development",
+      "Backend integration with Node.js",
     ],
-    animation: "animate__fadeInRight",
-  },
-  {
-    role: "Trainee Developer",
-    company: "WebTech Startups",
-    period: "2020 - 2021",
-    details: [
-      "Built interactive user interfaces",
-      "Collaborated with UI/UX designers",
-      "Implemented responsive designs",
-    ],
-    animation: "animate__fadeInLeft",
   },
 ];
 
 const Experience = () => {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(
-              "animate__animated",
-              entry.target.dataset.animation
-            );
-            entry.target.style.opacity = 1;
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll(".animate__animated").forEach((el) => {
-      el.style.opacity = 0;
-      observer.observe(el);
-    });
-  }, []);
-
   return (
-    <section id="experience" className="bg-base-100 py-20">
+    <section id="experience" className="bg-base-100 py-24 border-t border-base-300">
       <div className="container mx-auto px-4">
-        {/* Section Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Work Experience
+        <div className="mb-20 text-center">
+          <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">
+            Professional Journey
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
+          <h3 className="text-4xl md:text-5xl font-black text-base-content">
+            Experience & Mentorship
+          </h3>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-base-300"></div>
+        <div className="max-w-4xl mx-auto relative px-4">
+          {/* Timeline Line */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary/20 to-transparent"></div>
 
-          {/* Experience Items */}
-          <div className="space-y-12">
-            {experienceData.map((exp, index) => (
+          <div className="space-y-16">
+            {experiences.map((exp, index) => (
               <div
                 key={index}
-                className={`relative flex md:justify-between items-center flex-col md:flex-row`}
-                data-animation={exp.animation}
+                className={`relative flex flex-col md:flex-row items-center ${
+                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
               >
-                <div className="md:w-5/12 mb-8 md:mb-0 md:text-right">
-                  <div className="card bg-base-200 shadow-xl p-6">
-                    <h3 className="card-title text-base-content">{exp.role}</h3>
-                    <p className="text-base-content/80">{exp.company}</p>
-                    <p className="text-base-content/60">{exp.period}</p>
-                    <ul className="list-disc list-inside mt-4 text-base-content/70">
-                      {exp.details.map((detail, i) => (
-                        <li key={i}>{detail}</li>
-                      ))}
-                    </ul>
+                {/* Timeline Node */}
+                <div className="absolute left-[-5px] md:left-1/2 md:translate-x-[-50%] w-3 h-3 bg-primary rounded-full shadow-[0_0_10px_hsl(var(--p))]"></div>
+
+                {/* Content Card */}
+                <div
+                  className={`w-full md:w-[45%] p-8 bg-base-200 rounded-2xl border border-primary/10 hover:border-primary/40 transition-all ${
+                    index % 2 === 0 ? "md:pr-12" : "md:pl-12"
+                  }`}
+                >
+                  <div className="text-primary font-black text-sm uppercase tracking-widest mb-2">
+                    {exp.period}
                   </div>
+                  <h4 className="text-2xl font-black text-base-content mb-1">
+                    {exp.role}
+                  </h4>
+                  <div className="text-base-content/60 font-bold text-lg mb-4">
+                    {exp.company}
+                  </div>
+                  <ul className="space-y-3">
+                    {exp.details.map((detail, i) => (
+                      <li
+                        key={i}
+                        className="text-base-content/50 text-sm leading-relaxed flex items-start space-x-2"
+                      >
+                        <span className="text-primary mt-1">•</span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div className="hidden md:block w-12 h-12 absolute left-1/2 transform -translate-x-1/2 bg-primary rounded-full border-4 border-white"></div>
               </div>
             ))}
           </div>

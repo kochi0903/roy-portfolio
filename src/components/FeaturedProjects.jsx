@@ -1,88 +1,111 @@
 import React from "react";
-import StudentJobTrackerIcon from "../assets/JobTracker.png";
-import Expenseracker from "../assets/ExpenseTracker.png";
-import InventoryIcon from "../assets/InventoryForecast.png";
 
-const ProjectsSection = () => {
-  const projects = [
-    {
-      icon: <img src={StudentJobTrackerIcon} alt="Job Tracker" />,
-      title: "Student Job Tracker",
-      description: "Full Stack Project",
-      technologies: ["React", "Tailwind"],
-      links: {
-        demo: "https://roy-job-tracker.vercel.app/",
-        code: "https://github.com/kochi0903/student-job-tracker",
-      },
-    },
-    {
-      icon: <img src={Expenseracker} alt="Expense Tracker" />,
-      title: "Tracker Expense",
-      description: "User can Track their Day to Day Expenses.",
-      technologies: ["React.js", "Redux"],
-      links: {
-        demo: "https://expense-tracker-one-lac.vercel.app/",
-        code: "https://github.com/kochi0903/tracker-expense",
-      },
-    },
-    {
-      icon: <img src={InventoryIcon} alt="Inventory Forecasting" />,
-      title: "Shop Inventory Forecasting",
-      description: "Forecasting the Inventory Amount on Basis of Previous Sale",
-      technologies: ["ReactJS", "AI/ML", "Django", "Python"],
-      links: {
-        demo: "https://github.com/kochi0903/InventoryForecastReact",
-        code: "https://github.com/kochi0903/InventoryForecastReact",
-      },
-    },
-  ];
+const projects = [
+  {
+    title: "Student Job Tracker",
+    problem:
+      "Manual tracking of student job applications leading to missed opportunities and disorganized data.",
+    solution:
+      "A centralized dashboard for students and admins to track applications, interviews, and offer statuses in real-time.",
+    tech: ["React.js", "Node.js", "Express", "MongoDB"],
+    demo: "#",
+    github: "https://github.com/kochi0903/student-job-tracker",
+  },
+  {
+    title: "Tracker Expense",
+    problem:
+      "Difficulty in managing personal finances and visualizing spending habits across different categories.",
+    solution:
+      "An intuitive expense management system with dynamic charting and automated categorization for financial insight.",
+    tech: ["Next.js", "Chart.js", "PostgreSQL", "Prisma"],
+    demo: "#",
+    github: "https://github.com/kochi0903/expense-tracker",
+  },
+  {
+    title: "Shop Inventory Forecasting",
+    problem:
+      "Retailers struggling with overstocking or stockouts due to lack of predictive analytics.",
+    solution:
+      "A data-driven inventory management tool that forecasts demand based on historical sales patterns.",
+    tech: ["Python", "Flask", "React", "MySQL"],
+    demo: "#",
+    github: "https://github.com/kochi0903/inventory-forecasting",
+  },
+];
 
+const FeaturedProjects = () => {
   return (
-    <section id="projects" className="bg-base-100 py-20">
+    <section id="projects" className="bg-base-100 py-24 border-t border-base-300">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Featured Projects
+        <div className="mb-20">
+          <h2 className="text-primary font-bold tracking-widest uppercase text-sm mb-4">
+            Production Artifacts
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
+          <h3 className="text-4xl md:text-5xl font-black text-base-content">
+            Technical Problem Solving
+          </h3>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="space-y-12">
           {projects.map((project, index) => (
             <div
-              key={project.title}
-              className="card card-bordered bg-base-200 shadow-xl transform transition-transform hover:scale-105"
+              key={index}
+              className="flex flex-col lg:flex-row bg-base-200 rounded-3xl overflow-hidden border border-primary/5 hover:border-primary/20 transition-all group"
             >
-              <figure className="px-10 pt-10 bg-base-300 h-48 flex items-center justify-center">
-                <div className="text-primary">{project.icon}</div>
-              </figure>
-              <div className="card-body">
-                <h3 className="card-title text-base-content">
+              {/* Text Side */}
+              <div className="lg:w-2/3 p-10 md:p-14 border-r border-primary/5">
+                <h4 className="text-3xl font-black text-base-content mb-8">
                   {project.title}
-                </h3>
-                <p className="text-base-content/70">{project.description}</p>
-                <div className="flex flex-wrap gap-2 my-4">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="badge badge-primary badge-outline"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                </h4>
+                <div className="grid md:grid-cols-2 gap-10">
+                  <div className="space-y-4">
+                    <div className="text-primary font-bold text-xs uppercase tracking-widest">
+                      The Problem
+                    </div>
+                    <p className="text-base-content/50 text-sm leading-relaxed">
+                      {project.problem}
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="text-primary font-bold text-xs uppercase tracking-widest">
+                      The Solution
+                    </div>
+                    <p className="text-base-content/50 text-sm leading-relaxed">
+                      {project.solution}
+                    </p>
+                  </div>
                 </div>
-                <div className="card-actions justify-start">
+              </div>
+
+              {/* Action Side */}
+              <div className="lg:w-1/3 p-10 md:p-14 bg-base-300/30 flex flex-col justify-between">
+                <div>
+                  <div className="text-primary font-bold text-xs uppercase tracking-widest mb-6">
+                    Tech Stack
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-10">
+                    {project.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="badge badge-outline badge-primary font-bold"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex flex-col gap-4">
                   <a
-                    href={project.links.demo}
-                    className="btn btn-primary btn-sm"
+                    href={project.github}
+                    className="btn btn-outline btn-primary btn-sm uppercase tracking-widest"
                   >
-                    Live Demo
+                    Source Code
                   </a>
                   <a
-                    href={project.links.code}
-                    className="btn btn-outline btn-primary btn-sm"
+                    href={project.demo}
+                    className="btn btn-primary btn-sm uppercase tracking-widest"
                   >
-                    Code
+                    Live Demo
                   </a>
                 </div>
               </div>
@@ -94,4 +117,4 @@ const ProjectsSection = () => {
   );
 };
 
-export default ProjectsSection;
+export default FeaturedProjects;

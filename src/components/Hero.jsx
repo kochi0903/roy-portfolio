@@ -2,54 +2,66 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section id="hero" className="bg-base-100 min-h-screen pt-20 relative">
-      <div className="container mx-auto px-4 h-full flex items-center">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-6">
-            <p className="text-base-content/80 font-semibold">Hello, I'm</p>
-            <h1 className="text-4xl md:text-6xl font-bold text-base-content">
-              Kisholoy Roy
-            </h1>
-            <h2 className="text-2xl md:text-3xl text-primary">
-              Full Stack Developer
-            </h2>
-            <p className="text-base-content/70 text-lg">
-              Crafting digital experiences through elegant code and innovative
-              solutions. Specialized in building scalable web applications with
-              modern technologies.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#contact" className="btn btn-primary">
-                Hire Me
-              </a>
-              <a href="#projects" className="btn btn-outline btn-primary">
-                View Projects
-              </a>
-            </div>
+    <section id="hero" className="min-h-screen pt-32 pb-20 relative overflow-hidden flex items-center bg-base-100">
+      {/* Background Decor */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px]"></div>
+        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-primary/5 rounded-full blur-[100px]"></div>
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage: `radial-gradient(currentColor 1px, transparent 1px)`,
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl">
+          <div className="inline-block px-4 py-1 rounded-full bg-base-200 border border-primary/20 text-primary text-xs font-bold tracking-widest uppercase mb-8 animate-fadeIn">
+            Full Stack System Architect
           </div>
 
-          {/* Right Content */}
-          <div className="relative flex justify-center items-center">
-            <div className="w-48 h-48 sm:w-72 sm:h-72 md:w-96 md:h-96 relative">
-              {/* Pulsing Background */}
-              <div className="absolute inset-0 bg-primary/20 rounded-full animate-pulse"></div>
+          <h1 className="text-6xl md:text-8xl font-black text-base-content leading-[0.9] tracking-tighter mb-8 animate-fadeIn">
+            I build scalable <br />
+            <span className="text-primary">full-stack systems</span> <br />
+            with precision.
+          </h1>
 
-              {/* Center Content */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-base-100 rounded-full shadow-lg w-full h-full flex items-center justify-center">
-                  <div className="text-6xl md:text-9xl font-bold text-primary">
-                    KR
-                  </div>
-                </div>
-              </div>
-            </div>
+          <p
+            className="text-xl md:text-2xl text-base-content/60 max-w-2xl leading-relaxed mb-12 animate-fadeIn"
+            style={{ animationDelay: "0.1s" }}
+          >
+            A Senior Software Engineer with over{" "}
+            <span className="text-base-content font-bold">
+              4.5 years of industry expertise
+            </span>{" "}
+            and{" "}
+            <span className="text-base-content font-bold">
+              1.5 years of freelancing
+            </span>{" "}
+            experience in the MERN ecosystem.
+          </p>
+
+          <div
+            className="flex flex-col sm:flex-row gap-6 animate-fadeIn"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <a
+              href="#projects"
+              className="btn btn-primary btn-lg uppercase tracking-widest font-black"
+            >
+              View Projects
+            </a>
+            <a
+              href="#contact"
+              className="btn btn-outline btn-primary btn-lg uppercase tracking-widest font-black"
+            >
+              Contact Me
+            </a>
           </div>
         </div>
       </div>
-
-      {/* Bottom Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-base-100 to-transparent"></div>
     </section>
   );
 };
